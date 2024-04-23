@@ -1,0 +1,53 @@
+.Home,
+.Contact,
+.About {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin-right: 20px;
+  font-family: "interface", sans-serif;
+}
+
+.navbar {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #b96d6d;
+}
+
+.active a {
+  color: #67302d;
+  font-weight: 600;
+}
+
+.main-elements {
+  display: flex;
+  align-items: center;
+}
+
+.main-elements li {
+  margin-right: 20px;
+}
+
+.home-page-element {
+  margin: auto;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 1px;
+  font-size: 2rem;
+}
+
+.icon-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.icon {
+  margin-left: 10px;
+}
+
