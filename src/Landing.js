@@ -24,20 +24,20 @@ function Landing() {
               <button>Explore my portfolio</button>
             </Link>
           </div>
-          <div className="icon-container">
+          <div className="icons-container">
             <a
               href="https://www.linkedin.com/in/fidah-ali/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaLinkedinIn className="icon" size={20} />
+              <FaLinkedinIn className="icons" size={20} />
             </a>
             <a
               href="mailto:alifidah2902@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaEnvelope className="icon" size={20} />
+              <FaEnvelope className="icons" size={20} />
             </a>
           </div>
         </header>

@@ -77,12 +77,12 @@ button:hover{
     height: 10vh; 
 }
 
-.icon-container{
+.icons-container{
     display: flex;
     justify-content: center; /* Center icons horizontally */
     align-items: center;
 }
-.icon{
+.icons{
     padding: 10px;
     background-color: #EBD6D6;
     margin-left: 10px;
@@ -91,7 +91,7 @@ button:hover{
     transition: ease-out 0.5s;
 }
 
-.icon:hover{
+.icons:hover{
     color: #67302D;
     transition: ease-in 0.5s;
     cursor: pointer;

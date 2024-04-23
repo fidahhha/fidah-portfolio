@@ -1,26 +1,47 @@
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "./Main.css";
 import "typeface-inter";
-import { FaLinkedinIn } from "react-icons/fa";
-import { FaEnvelope } from "react-icons/fa";
-import { FaBars } from 'react-icons/fa';
+import { FaLinkedinIn, FaEnvelope, FaBars } from "react-icons/fa";
 
-function Contact() {
+function Home() {
   const location = useLocation();
-  const splitLocation = location.pathname.split('/');
+  const splitLocation = location.pathname.split("/");
+  const [isOpen, setIsOpen] = useState(false);
+  const [showMenuIcon, setShowMenuIcon] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleResize = () => {
+    if (window.innerWidth <= 600) {
+      setShowMenuIcon(true);
+    } else {
+      setShowMenuIcon(false);
+      setIsOpen(false); // Close the menu when screen size is above 600px
+    }
+  };
+
+  // Add event listener for window resize
+  useEffect(() => {
+    handleResize(); // Call the function on component mount
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize); // Cleanup
+  }, []);
 
   return (
-    <div className="Contact">
+    <div className="Home">
+      {showMenuIcon && <FaBars className="menu-icon" onClick={toggleMenu} />}
       <header className="App-header">
         <nav>
           <ul className="navbar">
-            <div className="main-elements">
+            <div className={`main-elements ${isOpen ? "open" : ""}`}>
               <li className={splitLocation[1] === "" ? "active" : ""}>
-                <Link to='/'>Welcome!</Link>
+                <Link to="/">Welcome!</Link>
               </li>
               <li className={splitLocation[1] === "about" ? "active" : ""}>
-                <Link to='/about'>About Me</Link>
+                <Link to="/about">About Me</Link>
               </li>
               <li className={splitLocation[1] === "home" ? "active" : ""}>
                 <Link to="/home">Projects</Link>
@@ -31,9 +52,10 @@ function Contact() {
             </div>
             <div className="home-page-element">
               <li>
-              <Link to="/home">Fidah Ali</Link>
+                <Link to="/home">Fidah Ali</Link>
               </li>
             </div>
+
             <div className="icon-container">
               <a
                 href="https://www.linkedin.com/in/fidah-ali/"
@@ -57,4 +79,4 @@ function Contact() {
   );
 }
 
-export default Contact;
+export default Home;

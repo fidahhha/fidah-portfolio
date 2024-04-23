@@ -18,11 +18,17 @@
 .navbar a {
   text-decoration: none;
   color: #b96d6d;
+  transition: ease-out 0.5s;
 }
 
 .active a {
   color: #67302d;
   font-weight: 600;
+}
+
+a:hover {
+  color: #67302d;
+  transition: ease-in 0.3s;
 }
 
 .main-elements {
@@ -35,12 +41,14 @@
 }
 
 .home-page-element {
+  text-align: center;
   margin: auto;
   text-transform: uppercase;
   font-weight: 800;
   letter-spacing: 1px;
   font-size: 2rem;
 }
+
 
 .icon-container {
   display: flex;
@@ -51,3 +59,109 @@
   margin-left: 10px;
 }
 
+.icon:hover {
+  color: #67302d;
+  transition: ease-in 0.5s;
+  cursor: pointer;
+}
+
+.Home-Container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.Home-Container h1 {
+  color: #67302d;
+  text-transform: none;
+  margin-top: -100px;
+  text-align: center;
+}
+
+.Home-Container p {
+  margin-top: -50px;
+  color: rgb(44, 44, 44);
+  text-align: center;
+}
+
+.arrow {
+  color: #67302d;
+  cursor: pointer;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto; /* Auto-sized rows */
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  .projects-container {
+    border: 2px solid #f76707;
+    border-radius: 5px;
+    background-color: #fff4e6;
+  }
+  
+  .projects-container > div {
+    border: 2px solid #ffa94d;
+    border-radius: 5px;
+    background-color: #ffd8a8;
+    padding: 1em;
+    color: #d9480f;
+  }
+  
+  /* Media query for screens smaller than 768px */
+  @media (max-width: 767px) {
+    .projects-container {
+      grid-template-columns: repeat(1, 1fr); /* 2 columns */
+    }
+  }
+  
+
+/* Media Query for screens up to 600px width */
+@media (max-width: 600px) {
+  .main-elements {
+    display: none;
+    margin-top: 80px;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar li {
+    transition: ease-out 0.3s;
+    width: 100%;
+    text-align: center;
+  }
+
+  .main-elements.open {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 50;
+    right: 0;
+    padding: 10px;
+    z-index: 999;
+    background-color: #b96d6d83;
+    width: 100%;
+    overflow-y: none;
+  }
+
+  .main-elements li:hover {
+    background-color: #e4e4e463;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    transition: ease-in 0.3s;
+  }
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+  }
+}
