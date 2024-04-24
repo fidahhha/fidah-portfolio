@@ -49,12 +49,11 @@ a:hover {
   font-size: 2rem;
 }
 
-
 .icon-container {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  align-items: center; 
+  align-items: center;
 }
 
 .icon {
@@ -63,10 +62,10 @@ a:hover {
   height: 35px;
   width: 35px;
   padding: 8px;
-  background-color: #EBD6D6;
+  background-color: #ebd6d6;
   margin-left: 10px;
   border-radius: 5px;
-  color: #B96D6D;
+  color: #b96d6d;
   transition: ease-out 0.5s;
 }
 
@@ -76,6 +75,14 @@ a:hover {
   cursor: pointer;
 }
 
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 .Home-Container {
   display: flex;
@@ -92,8 +99,15 @@ a:hover {
   text-align: center;
 }
 
-.Home-Container p {
+.Home-Container h2 {
   margin-top: -50px;
+
+  color: #b96d6d;
+  text-align: center;
+}
+
+.Home-Container p {
+  margin-top: 5px;
   color: rgb(44, 44, 44);
   text-align: center;
 }
@@ -104,16 +118,21 @@ a:hover {
 }
 
 .Pcontainer {
+  padding-top: 50px;
+  margin-top: -30px;
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
-  height: 150vh; 
+  height: 100vh;
 }
 
 .projects-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(calc((100% - 225px) / 3), 1fr)); /* Set the grid to fit the available space with a minimum width of 200px and a maximum of 1fr */
-  grid-gap: 20px; /* Adjust the gap between grid items */
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(calc((100% - 225px) / 3), 1fr)
+  );
+  grid-gap: 20px;
 }
 
 * {
@@ -126,35 +145,62 @@ a:hover {
 }
 
 .projects-container > div {
-  width: 100%; /* Set the width to 100% to fill the grid item */
-  aspect-ratio: 1; /* Maintain a square aspect ratio */
+  width: 100%;
+  aspect-ratio: 1;
   border-radius: 5px;
   background-color: #ffd8a8;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
-/* Ensure images fill their containers */
 .projects-container img {
-  width: 100%; 
-  height: 100%; 
-  object-fit: cover; 
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
+
+.project {
+  position: relative;
+}
+
+.project .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(103, 48, 45, 0.8);
+  color: white;
+  font-size: 2vw;
+  font-family: "interface", sans-serif;
+  text-align: center;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project:hover .overlay {
+  opacity: 1;
+}
+
+/* --------------------- ALL MEDIA QUERIES ---------------------- */
 
 /* Media query for screens smaller than 768px */
 @media (max-width: 767px) {
   .projects-container {
-    grid-template-columns: repeat(2, 225px); 
-    
+    grid-template-columns: repeat(2, 225px);
   }
 }
 
-/* Media query for screens smaller than 768px */
+/* Media query for screens smaller than 600px */
 @media (max-width: 600px) {
   .projects-container {
-    grid-template-columns: repeat(1, 225px); 
+    grid-template-columns: repeat(1, 225px);
   }
 }
 

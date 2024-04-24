@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Main.css";
 import "typeface-inter";
-import { FaLinkedinIn, FaEnvelope, FaBars } from "react-icons/fa";
+import { FaLinkedinIn, FaEnvelope, FaBars, FaGithub } from "react-icons/fa";
 
 function Home() {
   const location = useLocation();
@@ -70,6 +70,13 @@ function Home() {
                 rel="noopener noreferrer"
               >
                 <FaEnvelope className="icon" size={20} />
+              </a>
+              <a
+                href="https://github.com/fidahhha"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaGithub className="icons" size={25} />
               </a>
             </div>
           </ul>

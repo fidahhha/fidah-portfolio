@@ -85,38 +85,53 @@ function Home() {
                 <FaEnvelope className="icon" size={20} />
               </a>
               <a
-              href="https://github.com/fidahhha"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaGithub className="icons" size={25} />
-            </a>
+                href="https://github.com/fidahhha"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaGithub className="icons" size={25} />
+              </a>
             </div>
           </ul>
         </nav>
 
         <div className="Home-Container">
           <h1>Welcome!</h1>
-          <p>Scroll down to see my projects</p>
+          <h2>
+            <span style={{ display: 'inline-block', animation: 'spin 2s linear infinite' }}>&#127800;</span> Scroll down to see my projects{' '}
+            <span style={{ display: 'inline-block', animation: 'spin 2s linear infinite' }}>&#127800;</span>
+          </h2>
+          <p>
+            Here, you'll find a blend of personal passion projects and
+            university assignments that showcase my dedication to creativity,
+            problem-solving, and continuous learning. Each project reflects my
+            commitment to exploring new ideas and pushing boundaries in design.
+            Feel free to explore and get in touch!
+          </p>
           <FaArrowDown className="arrow" size={20} onClick={scrollToProjects} />
         </div>
 
         <div className="Pcontainer">
           <div className="projects-container" ref={projectsContainerRef}>
-            <div>
+            <div className="project">
               <img src={kawena} alt="Kawena" />
+              <div className="overlay">Kawena Designs</div>
             </div>
-            <div>
+            <div className="project">
               <img src={firstwatch} alt="FirstWatch" />
+              <div className="overlay">Cybersecurity Alarms App</div>
             </div>
-            <div>
+            <div className="project">
               <img src={parking} alt="ParkingApp" />
+              <div className="overlay">Parking App</div>
             </div>
-            <div>
+            <div className="project">
               <img src={cms} alt="UoWCMS" />
+              <div className="overlay">Content Management System</div>
             </div>
-            <div>
+            <div className="project">
               <img src={projectmanagement} alt="React" />
+              <div className="overlay">Project Management Application</div>
             </div>
           </div>
         </div>
