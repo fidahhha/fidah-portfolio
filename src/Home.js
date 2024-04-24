@@ -5,6 +5,10 @@ import "typeface-inter";
 import { FaLinkedinIn, FaEnvelope, FaBars } from "react-icons/fa";
 import { FaArrowDown } from "react-icons/fa";
 import parking from "./Images/parking.jpg";
+import kawena from "./Images/kawena.jpg";
+import firstwatch from "./Images/firstwatch.jpg";
+import projectmanagement from "./Images/projectmanagement.jpg";
+import cms from "./Images/cms.jpg";
 
 function Home() {
   const location = useLocation();
@@ -90,13 +94,24 @@ function Home() {
           <FaArrowDown className="arrow" size={20} onClick={scrollToProjects} />
         </div>
 
-        <div className="projects-container" ref={projectsContainerRef}>
-          <div>One</div>
-          <div>Two</div>
-          <div>Three</div>
-          <div>Four</div>
-          <div>Five</div>
-          <div>Six</div>
+        <div className="Pcontainer">
+          <div className="projects-container" ref={projectsContainerRef}>
+            <div>
+              <img src={kawena} alt="Kawena" />
+            </div>
+            <div>
+              <img src={firstwatch} alt="FirstWatch" />
+            </div>
+            <div>
+              <img src={parking} alt="ParkingApp" />
+            </div>
+            <div>
+              <img src={cms} alt="UoWCMS" />
+            </div>
+            <div>
+              <img src={projectmanagement} alt="React" />
+            </div>
+          </div>
         </div>
       </header>
     </div>

@@ -91,37 +91,60 @@ a:hover {
   cursor: pointer;
 }
 
+.Pcontainer {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  height: 150vh; 
+}
+
 .projects-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: auto; /* Auto-sized rows */
-  }
-  
-  * {
-    box-sizing: border-box;
-  }
-  
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(calc((100% - 225px) / 3), 1fr)); /* Set the grid to fit the available space with a minimum width of 200px and a maximum of 1fr */
+  grid-gap: 20px; /* Adjust the gap between grid items */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.projects-container {
+  border-radius: 5px;
+  background-color: #fff4e6;
+}
+
+.projects-container > div {
+  width: 100%; /* Set the width to 100% to fill the grid item */
+  aspect-ratio: 1; /* Maintain a square aspect ratio */
+  border-radius: 5px;
+  background-color: #ffd8a8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; 
+}
+
+/* Ensure images fill their containers */
+.projects-container img {
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+}
+
+/* Media query for screens smaller than 768px */
+@media (max-width: 767px) {
   .projects-container {
-    border: 2px solid #f76707;
-    border-radius: 5px;
-    background-color: #fff4e6;
+    grid-template-columns: repeat(2, 225px); 
+    
   }
-  
-  .projects-container > div {
-    border: 2px solid #ffa94d;
-    border-radius: 5px;
-    background-color: #ffd8a8;
-    padding: 1em;
-    color: #d9480f;
+}
+
+/* Media query for screens smaller than 768px */
+@media (max-width: 600px) {
+  .projects-container {
+    grid-template-columns: repeat(1, 225px); 
   }
-  
-  /* Media query for screens smaller than 768px */
-  @media (max-width: 767px) {
-    .projects-container {
-      grid-template-columns: repeat(1, 1fr); /* 2 columns */
-    }
-  }
-  
+}
 
 /* Media Query for screens up to 600px width */
 @media (max-width: 600px) {
