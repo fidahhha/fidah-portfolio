@@ -5,7 +5,7 @@ import "typeface-inter";
 import { Link } from "react-router-dom";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaEnvelope } from "react-icons/fa";
-
+import { FaGithub } from 'react-icons/fa';
 function Landing() {
   return (
     <div className="Landing">
@@ -30,14 +30,21 @@ function Landing() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaLinkedinIn className="icons" size={20} />
+              <FaLinkedinIn className="icons" size={25} />
             </a>
             <a
               href="mailto:alifidah2902@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaEnvelope className="icons" size={20} />
+              <FaEnvelope className="icons" size={25} />
+            </a>
+            <a
+              href="https://github.com/fidahhha"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaGithub className="icons" size={25} />
             </a>
           </div>
         </header>

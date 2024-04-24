@@ -53,10 +53,21 @@ a:hover {
 .icon-container {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
+  align-items: center; 
 }
 
 .icon {
+  flex: 1;
+  margin: 0 5px;
+  height: 35px;
+  width: 35px;
+  padding: 8px;
+  background-color: #EBD6D6;
   margin-left: 10px;
+  border-radius: 5px;
+  color: #B96D6D;
+  transition: ease-out 0.5s;
 }
 
 .icon:hover {
@@ -64,6 +75,7 @@ a:hover {
   transition: ease-in 0.5s;
   cursor: pointer;
 }
+
 
 .Home-Container {
   display: flex;
