@@ -1,4 +1,3 @@
-import React from 'react';
 import background from "./Images/Landing-BG.png";
 import "./Landing.css";
 import "typeface-inter";
@@ -6,7 +5,14 @@ import { Link } from "react-router-dom";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaEnvelope } from "react-icons/fa";
 import { FaGithub } from 'react-icons/fa';
+import React, {useEffect} from "react";
+
 function Landing() {
+
+  useEffect(() => {
+    document.title = "Welcome!";
+  }, []);
+
   return (
     <div className="Landing">
       <img src={background} className="App-background" alt="background" />

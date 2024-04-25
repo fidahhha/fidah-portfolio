@@ -30,6 +30,10 @@ function Home() {
     return () => window.removeEventListener("resize", handleResize); // Cleanup
   }, []);
 
+  useEffect(() => {
+    document.title = "About Me";
+  }, []);
+  
   return (
     <div className="Home">
       {showMenuIcon && <FaBars className="menu-icon" onClick={toggleMenu} />}

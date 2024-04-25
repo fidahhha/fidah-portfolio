@@ -15,6 +15,7 @@ function Home() {
   const splitLocation = location.pathname.split("/");
   const [isOpen, setIsOpen] = useState(false);
   const [showMenuIcon, setShowMenuIcon] = useState(false);
+  const [scrolling, setScrolling] = useState(false);
   const projectsContainerRef = useRef(null);
 
   const toggleMenu = () => {
@@ -26,29 +27,62 @@ function Home() {
       setShowMenuIcon(true);
     } else {
       setShowMenuIcon(false);
-      setIsOpen(false); // Close the menu when screen size is above 600px
+      setIsOpen(false); // Close the menu when screen size is above 800px
     }
   };
 
-  // Add event listener for window resize
+  const changeBackground = () => {
+    if (window.scrollY >= 50) {
+      setScrolling(true);
+    } else {
+      setScrolling(false);
+    }
+  };
+
+  // Add event listener for window resize and scroll
   useEffect(() => {
-    handleResize(); // Call the function on component mount
+    handleResize();
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize); // Cleanup
+    window.addEventListener("scroll", changeBackground);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("scroll", changeBackground);
+    };
   }, []);
 
-  const scrollToProjects = () => {
-    projectsContainerRef.current.scrollIntoView({ behavior: "smooth" });
+  const scrollToProjects = (e) => {
+    e.preventDefault(); // Prevent default click behavior
+  
+    // Get the position of the projects container relative to the viewport
+    const projectsContainerPosition = projectsContainerRef.current.getBoundingClientRect();
+    
+    // Adjust the scroll position by subtracting some pixels (e.g., 20) from the top
+    const offset = 200; // Adjust this value as needed
+    window.scrollTo({
+      top: projectsContainerPosition.top - offset,
+      behavior: "smooth",
+    });
   };
+  
+  
+
+  useEffect(() => {
+    document.title = "Home";
+  }, []);
 
   return (
     <div className="Home">
       <header className="App-header">
-        <nav>
+        <nav className={scrolling ? "navbar activestate" : "navbar"}>
           <ul className="navbar">
-          {showMenuIcon && (
-            <FaBars className="menu-icon" onClick={toggleMenu} />
-          )}
+            {showMenuIcon && (
+              <FaBars className="menu-icon" onClick={toggleMenu} />
+            )}
+            <div className="home-page-element">
+              <li>
+                <Link to="/home">Fidah Ali</Link>
+              </li>
+            </div>
             <div className={`main-elements ${isOpen ? "open" : ""}`}>
               <li className={splitLocation[1] === "" ? "active" : ""}>
                 <Link to="/">Welcome!</Link>
@@ -63,34 +97,31 @@ function Home() {
                 <Link to="/contact">Contact</Link>
               </li>
             </div>
-            <div className="home-page-element">
-              <li>
-                <Link to="/home">Fidah Ali</Link>
-              </li>
-            </div>
 
-            <div className="icon-container">
-              <a
-                href="https://www.linkedin.com/in/fidah-ali/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaLinkedinIn className="icon" size={20} />
-              </a>
-              <a
-                href="mailto:alifidah2902@gmail.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaEnvelope className="icon" size={20} />
-              </a>
-              <a
-                href="https://github.com/fidahhha"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaGithub className="icons" size={25} />
-              </a>
+            <div className="Icontainer">
+              <div className="icon-container">
+                <a
+                  href="https://www.linkedin.com/in/fidah-ali/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaLinkedinIn className="icon" size={20} />
+                </a>
+                <a
+                  href="mailto:alifidah2902@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaEnvelope className="icon" size={20} />
+                </a>
+                <a
+                  href="https://github.com/fidahhha"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaGithub className="icons" size={25} />
+                </a>
+              </div>
             </div>
           </ul>
         </nav>
@@ -98,8 +129,23 @@ function Home() {
         <div className="Home-Container">
           <h1>Welcome!</h1>
           <h2>
-            <span style={{ display: 'inline-block', animation: 'spin 2s linear infinite' }}>&#127800;</span> Scroll down to see my projects{' '}
-            <span style={{ display: 'inline-block', animation: 'spin 2s linear infinite' }}>&#127800;</span>
+            <span
+              style={{
+                display: "inline-block",
+                animation: "spin 2s linear infinite",
+              }}
+            >
+              &#127800;
+            </span>{" "}
+            Scroll down for my projects{" "}
+            <span
+              style={{
+                display: "inline-block",
+                animation: "spin 2s linear infinite",
+              }}
+            >
+              &#127800;
+            </span>
           </h2>
           <p>
             Here, you'll find a blend of personal passion projects and
@@ -115,23 +161,33 @@ function Home() {
           <div className="projects-container" ref={projectsContainerRef}>
             <div className="project">
               <img src={kawena} alt="Kawena" />
-              <div className="overlay">Kawena Designs</div>
+              <Link to="/kawena">
+                <div className="overlay">Kawena Designs</div>
+              </Link>
             </div>
             <div className="project">
               <img src={firstwatch} alt="FirstWatch" />
-              <div className="overlay">Cybersecurity Alarms App</div>
+              <Link to="/firstwatch">
+                <div className="overlay">Cybersecurity Alarms App</div>
+              </Link>
             </div>
             <div className="project">
               <img src={parking} alt="ParkingApp" />
-              <div className="overlay">Parking App</div>
+              <Link to="/parking">
+                <div className="overlay">Parking App</div>
+              </Link>
             </div>
             <div className="project">
               <img src={cms} alt="UoWCMS" />
-              <div className="overlay">Content Management System</div>
+              <Link to="/cms">
+                <div className="overlay">Content Management System</div>
+              </Link>
             </div>
             <div className="project">
               <img src={projectmanagement} alt="React" />
-              <div className="overlay">Project Management Application</div>
+              <Link to="/react">
+                <div className="overlay">Project Management Application</div>
+              </Link>
             </div>
           </div>
         </div>
