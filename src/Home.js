@@ -22,7 +22,7 @@ function Home() {
   };
 
   const handleResize = () => {
-    if (window.innerWidth <= 600) {
+    if (window.innerWidth <= 800) {
       setShowMenuIcon(true);
     } else {
       setShowMenuIcon(false);
@@ -45,10 +45,10 @@ function Home() {
     <div className="Home">
       <header className="App-header">
         <nav>
+          <ul className="navbar">
           {showMenuIcon && (
             <FaBars className="menu-icon" onClick={toggleMenu} />
           )}
-          <ul className="navbar">
             <div className={`main-elements ${isOpen ? "open" : ""}`}>
               <li className={splitLocation[1] === "" ? "active" : ""}>
                 <Link to="/">Welcome!</Link>

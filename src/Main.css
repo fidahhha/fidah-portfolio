@@ -36,8 +36,13 @@ a:hover {
   align-items: center;
 }
 
-.main-elements li {
-  margin-right: 20px;
+.main-elements li{
+  padding: 10px;
+}
+
+.menu-icon{
+  color: #67302d;
+  margin-left: -30px;
 }
 
 .home-page-element {
@@ -101,7 +106,6 @@ a:hover {
 
 .Home-Container h2 {
   margin-top: -50px;
-
   color: #b96d6d;
   text-align: center;
 }
@@ -205,10 +209,10 @@ a:hover {
 }
 
 /* Media Query for screens up to 600px width */
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .main-elements {
     display: none;
-    margin-top: 80px;
+    margin-top: 100px;
     flex-direction: column;
     width: 100%;
     text-align: center;
@@ -222,25 +226,30 @@ a:hover {
 
   .main-elements.open {
     display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
+    position: absolute;
+    top: 100px;
     bottom: 50;
+    left: 0;
     right: 0;
+    margin: auto; /* Center horizontally */
     padding: 10px;
     z-index: 999;
     background-color: #b96d6d83;
     width: 100%;
+    border-radius: 20px;
     overflow-y: none;
   }
+  
 
   .main-elements li:hover {
     background-color: #e4e4e463;
     width: 100%;
     text-align: center;
-    padding: 5px;
+    border-radius: 20px;
+    padding: 10px;
     transition: ease-in 0.3s;
   }
+
   .menu-icon {
     display: block;
     cursor: pointer;
