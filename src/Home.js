@@ -97,7 +97,6 @@ function Home() {
                 <Link to="/contact">Contact</Link>
               </li>
             </div>
-
             <div className="Icontainer">
               <div className="icon-container">
                 <a
@@ -125,7 +124,6 @@ function Home() {
             </div>
           </ul>
         </nav>
-
         <div className="Home-Container">
           <h1>Welcome!</h1>
           <h2>

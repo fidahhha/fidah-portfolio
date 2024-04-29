@@ -2,9 +2,16 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Main.css";
 import "typeface-inter";
-import { FaLinkedinIn, FaEnvelope, FaBars, FaGithub } from "react-icons/fa";
+import {
+  FaLinkedinIn,
+  FaEnvelope,
+  FaBars,
+  FaGithub,
+  FaFigma,
+  FaAndroid,
+} from "react-icons/fa";
 import FirstWatchPrototype from "./Images/FirstWatchPrototype.png";
-
+import video from "./Videos/FWPrototype.mp4";
 function Home() {
   const location = useLocation();
   const splitLocation = location.pathname.split("/");
@@ -47,7 +54,6 @@ function Home() {
   useEffect(() => {
     document.title = "Alarms App";
   }, []);
-
 
   return (
     <div className="Home">
@@ -106,10 +112,37 @@ function Home() {
         </nav>
 
         <div className="Hero-Container">
-            <h1>Cybersecurity Alarms Application</h1>
-            <h2>Client based project with First Watch</h2>
-            <h3>Android Studio Java ∙ Figma ∙ Microsoft PowerPoint ∙  GitHub</h3>
+          <h1>Cybersecurity Alarms Application</h1>
+          <h2>Client based project with First Watch</h2>
+          <h3>Android Studio Java ∙ Figma ∙ Microsoft PowerPoint ∙ GitHub</h3>
           <img src={FirstWatchPrototype} alt="FirstWatchPrototype" />
+        </div>
+        <div className="FContainer">
+          <h2>Project Description</h2>
+          <p>
+            My team and I worked on a mobile application for First Watch a
+            leading cybersecurity company in Hamilton, focusing on delivering
+            real-time alarm notifications and streamlined event management.
+          </p>
+        </div>
+        <div className="ProjectContainer">
+          <div className="Content">
+            <div className="FContainer">
+              <h2>My role</h2>
+              <FaFigma className="icon" size={30} />
+              <FaAndroid className="icon" size={30} />
+              <p>
+                I had the key role in designing the user interface for an
+                enhanced user experience.
+              </p>
+            </div>
+          </div>
+          <div className="Video">
+            <video autoPlay>
+              <source src={video} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
         </div>
       </header>
     </div>

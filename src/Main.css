@@ -242,6 +242,48 @@ a:hover {
   text-transform: none;
   text-align: center;
 }
+
+.ProjectContainer {
+  display: flex;
+}
+
+.Content {
+  flex: 1; 
+  padding-right: 20px; 
+}
+
+.Video {
+  flex: 1;
+}
+
+.FContainer h2 {
+  color: #67302d;
+  font-size: 1.5rem;
+  text-transform: none;
+  margin-left: 15px;
+  font-weight: 600;
+}
+
+.FContainer p {
+  color: black;
+  text-align: left;
+  text-align: justify;
+  margin-left: -5px;
+  margin-top: 20px;
+}
+
+.FContainer .icon {
+  margin-top: -15px;
+  height: 40px;
+  width: 40px;
+  margin-left: 15px;
+  margin-right: -10px;
+}
+
+video{
+  height: 500px;
+  border-radius: 20px;
+}
 /* --------------------- ALL MEDIA QUERIES + KEYFRAMES ---------------------- */
 @keyframes spin {
   0% {
@@ -319,3 +361,4 @@ a:hover {
     margin-right: 50px;
   }
 }
+

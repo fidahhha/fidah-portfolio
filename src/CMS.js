@@ -11,7 +11,6 @@ function Home() {
   const [isOpen, setIsOpen] = useState(false);
   const [showMenuIcon, setShowMenuIcon] = useState(false);
   const [scrolling, setScrolling] = useState(false);
-  const projectsContainerRef = useRef(null);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
