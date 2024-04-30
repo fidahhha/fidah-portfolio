@@ -27,7 +27,7 @@ function Home() {
       setShowMenuIcon(true);
     } else {
       setShowMenuIcon(false);
-      setIsOpen(false); // Close the menu when screen size is above 800px
+      setIsOpen(false); 
     }
   };
 
@@ -39,7 +39,6 @@ function Home() {
     }
   };
 
-  // Add event listener for window resize and scroll
   useEffect(() => {
     handleResize();
     window.addEventListener("resize", handleResize);
@@ -51,13 +50,13 @@ function Home() {
   }, []);
 
   const scrollToProjects = (e) => {
-    e.preventDefault(); // Prevent default click behavior
+    e.preventDefault(); 
   
-    // Get the position of the projects container relative to the viewport
+   
     const projectsContainerPosition = projectsContainerRef.current.getBoundingClientRect();
     
-    // Adjust the scroll position by subtracting some pixels (e.g., 20) from the top
-    const offset = 200; // Adjust this value as needed
+ 
+    const offset = 200;
     window.scrollTo({
       top: projectsContainerPosition.top - offset,
       behavior: "smooth",

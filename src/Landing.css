@@ -57,6 +57,7 @@ h1 {
     color: white;
     margin-top: -5px;
     padding: 12px; 
+    text-decoration: none;
     width: 210px;
     border: 1px solid #B96D6D;
     background-color: transparent;
@@ -68,6 +69,7 @@ h1 {
 button:hover{
     background-color: #B96D6D;
     transition: ease-in 0.5s;
+    text-decoration: none;
 }
 
 .BTN-Container {

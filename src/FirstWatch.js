@@ -9,9 +9,12 @@ import {
   FaGithub,
   FaFigma,
   FaAndroid,
+  FaMicrosoft,
 } from "react-icons/fa";
 import FirstWatchPrototype from "./Images/FirstWatchPrototype.png";
+import FWFlow from "./Images/FWFlow.png";
 import video from "./Videos/FWPrototype.mp4";
+
 function Home() {
   const location = useLocation();
   const splitLocation = location.pathname.split("/");
@@ -58,11 +61,16 @@ function Home() {
   return (
     <div className="Home">
       <header className="App-header">
-        <nav className={scrolling ? "navbar activestate" : "navbar"}>
+      <nav className={scrolling ? "navbar activestate" : "navbar"}>
           <ul className="navbar">
             {showMenuIcon && (
               <FaBars className="menu-icon" onClick={toggleMenu} />
             )}
+            <div className="home-page-element">
+              <li>
+                <Link to="/home">Fidah Ali</Link>
+              </li>
+            </div>
             <div className={`main-elements ${isOpen ? "open" : ""}`}>
               <li className={splitLocation[1] === "" ? "active" : ""}>
                 <Link to="/">Welcome!</Link>
@@ -77,12 +85,6 @@ function Home() {
                 <Link to="/contact">Contact</Link>
               </li>
             </div>
-            <div className="home-page-element">
-              <li>
-                <Link to="/home">Fidah Ali</Link>
-              </li>
-            </div>
-
             <div className="Icontainer">
               <div className="icon-container">
                 <a
@@ -110,38 +112,85 @@ function Home() {
             </div>
           </ul>
         </nav>
-
         <div className="Hero-Container">
           <h1>Cybersecurity Alarms Application</h1>
           <h2>Client based project with First Watch</h2>
           <h3>Android Studio Java ∙ Figma ∙ Microsoft PowerPoint ∙ GitHub</h3>
+          <a
+            href="https://www.figma.com/proto/VW7OJttf6HGg9k2CQaSlie/First-Watch-Wireframes?type=design&node-id=10-3&t=dwipyvaWeJyxU6rj-0&scaling=scale-down&page-id=0%3A1&starting-point-node-id=10%3A3"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button class="prototype-btn">Test the prototype!</button>
+          </a>
           <img src={FirstWatchPrototype} alt="FirstWatchPrototype" />
         </div>
         <div className="FContainer">
-          <h2>Project Description</h2>
+          <h2>Description</h2>
           <p>
-            My team and I worked on a mobile application for First Watch a
-            leading cybersecurity company in Hamilton, focusing on delivering
-            real-time alarm notifications and streamlined event management.
+            The mobile app extends First Watch's cybersecurity Platform to
+            smartphones, providing real-time alerts and easy access to security
+            information. Users can manage events, receive notifications, and
+            visualize alarm logs for proactive threat response.
+          </p>
+          <h2>Problem Statement</h2>
+          <p>
+            First Watch lacks a mobile application, hindering users' ability to
+            stay informed about cybersecurity events and manage activities
+            remotely. This gap in accessibility risks delayed responses to
+            critical alerts, potentially leading to customer loss and diminished
+            competitiveness.
+          </p>
+          <h2>Solution</h2>
+          <p>
+            We propose developing a mobile app to bridge the accessibility gap
+            for First Watch's cybersecurity platform. This solution will offer
+            real-time notifications and intuitive alarm management, empowering
+            users to respond promptly to cybersecurity events anytime, anywhere.
           </p>
         </div>
-        <div className="ProjectContainer">
-          <div className="Content">
-            <div className="FContainer">
-              <h2>My role</h2>
-              <FaFigma className="icon" size={30} />
-              <FaAndroid className="icon" size={30} />
-              <p>
-                I had the key role in designing the user interface for an
-                enhanced user experience.
-              </p>
+        <div class="Fprojects-container">
+          <div class="Fproject">
+            <h1>Timeline</h1>
+            <p>10 Jul 2023 - 05 Nov 2023</p>
+          </div>
+          <div class="Fproject">
+            <h1>My Role</h1>
+            <p>UI Designer + Front-end developer</p>
+          </div>
+          <div class="Fproject">
+            <h1>Tools</h1>
+            <div class="Ficon-wrapper">
+              <div className="Ficon-container">
+                <FaAndroid className="icon" size={20} />
+                <span className="tag">Android</span>
+              </div>
+              <div className="Ficon-container">
+                <FaFigma className="icon" size={20} />
+                <span className="tag">Figma</span>
+              </div>
+              <div className="Ficon-container">
+                <FaMicrosoft className="icon" size={20} />
+                <span className="tag">PowerPoint</span>
+              </div>
+              <div className="Ficon-container">
+                <FaGithub className="icon" size={20} />
+                <span className="tag">GitHub</span>
+              </div>
             </div>
           </div>
-          <div className="Video">
-            <video autoPlay>
-              <source src={video} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+        </div>
+        <div class="FContainer2">
+          {/* <p>
+          The image represents a flow of the prototype developed within Figma.
+          In this visualization, each screen or frame encapsulates a distinct
+          stage or interaction within the user journey. By arranging these
+          screens in a sequential manner, the flow illustrates the progression
+          of user interactions, transitions between different app states, and
+          the overall navigation structure.
+        </p> */}
+          <div class="image-container">
+            <img src={FWFlow} alt="Flow" />
           </div>
         </div>
       </header>
