@@ -18,27 +18,34 @@ function Home() {
   const [scrolling, setScrolling] = useState(false);
   const projectsContainerRef = useRef(null);
 
+  // Toggling the navigation for open or closed
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
   const handleResize = () => {
     if (window.innerWidth <= 800) {
+      // Show hamburger menu is the screen is 800px or smaller
       setShowMenuIcon(true);
     } else {
+      // Hide hamburger menu when the screen is larger than 800px
       setShowMenuIcon(false);
-      setIsOpen(false); 
     }
   };
 
+  // Method to change colour of navigation when scrolling
   const changeBackground = () => {
+    // Check if the window scrolled is greater or equal to 50px
     if (window.scrollY >= 50) {
+      // Allow background to show for navbar
       setScrolling(true);
     } else {
+      // If less than 50px don't show the colour of the navbar
       setScrolling(false);
     }
   };
 
+  // Add event listener for window resize and scroll for navigation
   useEffect(() => {
     handleResize();
     window.addEventListener("resize", handleResize);
@@ -49,20 +56,22 @@ function Home() {
     };
   }, []);
 
+  // Function that allows user to click arrow to go down to projects
   const scrollToProjects = (e) => {
-    e.preventDefault(); 
-  
-   
-  const projectsContainerPosition = projectsContainerRef.current.getBoundingClientRect();
-    
-  const offset = 200;
+    e.preventDefault();
+
+    //  Get the position of the projects container
+    const projectsContainerPosition =
+      projectsContainerRef.current.getBoundingClientRect();
+
+    // Scroll to the projects container but offset it to get exact position
+    const offset = 200;
     window.scrollTo({
       top: projectsContainerPosition.top - offset,
+      // Scrolling animation effect
       behavior: "smooth",
     });
   };
-  
-  
 
   useEffect(() => {
     document.title = "Home";

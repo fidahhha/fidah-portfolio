@@ -420,8 +420,6 @@ a:hover {
   margin: 0 auto;
 }
 
-/* Main.css */
-
 /* Laptop container */
 .laptop-container {
   position: relative;
@@ -439,21 +437,19 @@ a:hover {
 /* Wireframe container */
 .wireframe-container {
   position: absolute;
-  top: 193px; 
+  top: 185px; 
   left: 50.3%; 
   transform: translateX(-50%);
   overflow-y: auto; 
-  max-height: 47.7%;
+  max-height: 48.8%;
   width: 90%; 
   max-width: 61.6%; 
 }
-
 
 .wireframe {
   width: 100%; 
   height: auto;
 }
-
 
 @media screen and (max-width: 920px) {
   .laptop-container {

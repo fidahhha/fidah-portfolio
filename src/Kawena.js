@@ -12,10 +12,9 @@ import {
   FaReact,
 } from "react-icons/fa";
 import KawenaPrototype from "./Images/KPrototype.png";
-import KWireframes from "./Images/KWireframes.png";
-import KLowWireframes from "./Images/KLowWireframes.png";
 import LaptopMockup from "./LaptopMockup";
 function Home() {
+  // Declare variables
   const location = useLocation();
   const splitLocation = location.pathname.split("/");
   const [isOpen, setIsOpen] = useState(false);
@@ -23,36 +22,46 @@ function Home() {
   const [scrolling, setScrolling] = useState(false);
   const [enlargedImage, setEnlargedImage] = useState(null);
 
+  // Method to allow user to zoom into image
   const openImage = (imageSrc) => {
+    // Setting the image we want enlarged
     setEnlargedImage(imageSrc);
   };
 
+  // When called allows user to close image when clicked on again
   const closeImage = () => {
+    // Closing the image we want enlarged
     setEnlargedImage(null);
   };
 
+  // Toggling the navigation for open or closed
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
   const handleResize = () => {
     if (window.innerWidth <= 800) {
+      // Show hamburger menu is the screen is 800px or smaller
       setShowMenuIcon(true);
     } else {
+      // Hide hamburger menu when the screen is larger than 800px
       setShowMenuIcon(false);
-      setIsOpen(false); // Close the menu when screen size is above 800px
     }
   };
 
+  // Method to change colour of navigation when scrolling
   const changeBackground = () => {
+    // Check if the window scrolled is greater or equal to 50px
     if (window.scrollY >= 50) {
+      // Allow background to show for navbar
       setScrolling(true);
     } else {
+      // If less than 50px don't show the colour of the navbar
       setScrolling(false);
     }
   };
 
-  // Add event listener for window resize and scroll
+  // Add event listener for window resize and scroll for navigation
   useEffect(() => {
     handleResize();
     window.addEventListener("resize", handleResize);
@@ -75,6 +84,8 @@ function Home() {
             {showMenuIcon && (
               <FaBars className="menu-icon" onClick={toggleMenu} />
             )}
+            {/* Highlight the link/menu item that is currently active */}
+            {/* Split location to extract current path from URL */}
             <div className={`main-elements ${isOpen ? "open" : ""}`}>
               <li className={splitLocation[1] === "" ? "active" : ""}>
                 <Link to="/">Welcome!</Link>
@@ -127,11 +138,13 @@ function Home() {
           <h1>Kawena Designs'</h1>
           <h2>Small business website (Peronal Project)</h2>
           <h3>Figma ∙ Next.js ∙ CSS</h3>
+          {/* Call method to allow enlargement of image */}
           <img
             src={KawenaPrototype}
             alt="KawenaPrototype"
             onClick={() => openImage(KawenaPrototype)}
           />
+          {/* Call method to close enlargement of image */}
           {enlargedImage && (
             <div className="overlay" onClick={closeImage}>
               <img
@@ -201,41 +214,6 @@ function Home() {
                 <span className="tag">Next.js</span>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="FContainer2">
-          <h2>Wireframes</h2>
-          <div class="image-container">
-            <img
-              src={KLowWireframes}
-              alt="Flow"
-              onClick={() => openImage(KLowWireframes)}
-            />
-            {enlargedImage && (
-              <div className="overlay" onClick={closeImage}>
-                <img
-                  src={enlargedImage}
-                  alt="Enlarged Image"
-                  className="enlarged-image"
-                />
-              </div>
-            )}
-          </div>
-          <div class="image-container">
-            <img
-              src={KWireframes}
-              alt="Flow"
-              onClick={() => openImage(KWireframes)}
-            />
-            {enlargedImage && (
-              <div className="overlay" onClick={closeImage}>
-                <img
-                  src={enlargedImage}
-                  alt="Enlarged Image"
-                  className="enlarged-image"
-                />
-              </div>
-            )}
           </div>
         </div>
         <LaptopMockup />
