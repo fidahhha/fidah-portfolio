@@ -420,6 +420,152 @@ a:hover {
   margin: 0 auto;
 }
 
+/* Main.css */
+
+/* Laptop container */
+.laptop-container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px; /* Adjust the maximum width of the laptop frame */
+  margin: 0 auto; /* Center the laptop frame */
+}
+
+/* Laptop frame */
+.laptop-frame {
+  width: 100%;
+  height: auto;
+}
+
+/* Wireframe container */
+.wireframe-container {
+  position: absolute;
+  top: 193px; 
+  left: 50.3%; 
+  transform: translateX(-50%);
+  overflow-y: auto; 
+  max-height: 47.7%;
+  width: 90%; 
+  max-width: 61.6%; 
+}
+
+
+.wireframe {
+  width: 100%; 
+  height: auto;
+}
+
+
+@media screen and (max-width: 920px) {
+  .laptop-container {
+    max-width: 90%;
+  }
+
+  .wireframe-container {
+    position: absolute;
+    top: 47.9%; /* Vertically center the wireframe */
+    left: 50.4%;
+    transform: translate(-50%, -50%);
+    overflow-y: auto;
+    max-height: 47.7%;
+    width: 90%; /* Keep the same width */
+    max-width: 61.6%; /* Keep the same max-width */
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .laptop-container {
+    max-width: 90%;
+  }
+
+  .wireframe-container {
+    position: absolute;
+    top: 48%; /* Vertically center the wireframe */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow-y: auto;
+    max-height: 47.7%;
+    width: 90%; /* Keep the same width */
+    max-width: 61.5%; /* Keep the same max-width */
+  }
+}
+
+
+
+
+
+/* ---------------- Kawena designs project page ----------------------- */
+.Kproject h1{
+  font-size: 20px;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 1px;
+  font-weight: 800;
+  font-family: "interface", sans-serif;
+}
+
+.Kprojects-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Ensure items wrap onto the next line if necessary */
+  margin: 50px;
+  background-color: #b96d6d;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.295);
+  border-radius: 20px;
+}
+
+.Kprojects-container > div {
+  border-radius: 5px;
+  padding: 1em;
+  margin: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+.Kproject p{
+  color: rgb(255, 255, 255);
+  padding-top: 15px;
+}
+
+.tag {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 999;
+}
+
+.Kicon-container {
+  position: relative;
+  margin: 1px;
+}
+
+.Kicon-container:hover .tag {
+  opacity: 1;
+}
+
+.Kicon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: -40px;
+}
+
+.Kicon-container {
+  margin: 1px
+}
+
 /* --------------------- ALL MEDIA QUERIES + KEYFRAMES ---------------------- */
 @keyframes pulse {
   0% {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Main.css";
 import "typeface-inter";
@@ -29,6 +29,7 @@ function Home() {
   const closeImage = () => {
     setEnlargedImage(null);
   };
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
