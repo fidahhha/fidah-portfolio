@@ -12,16 +12,23 @@ import {
   FaMicrosoft,
 } from "react-icons/fa";
 import FirstWatchPrototype from "./Images/FirstWatchPrototype.png";
-import FWFlow from "./Images/FWFlow.png";
-import video from "./Videos/FWPrototype.mp4";
-
+import FWFlow from "./Images/FWWireframes.png";
+import FWIdentity from "./Images/FWbrandidentity.png";
 function Home() {
   const location = useLocation();
   const splitLocation = location.pathname.split("/");
   const [isOpen, setIsOpen] = useState(false);
   const [showMenuIcon, setShowMenuIcon] = useState(false);
   const [scrolling, setScrolling] = useState(false);
+  const [enlargedImage, setEnlargedImage] = useState(null);
 
+  const openImage = (imageSrc) => {
+    setEnlargedImage(imageSrc);
+  };
+
+  const closeImage = () => {
+    setEnlargedImage(null);
+  };
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -61,7 +68,7 @@ function Home() {
   return (
     <div className="Home">
       <header className="App-header">
-      <nav className={scrolling ? "navbar activestate" : "navbar"}>
+        <nav className={scrolling ? "navbar activestate" : "navbar"}>
           <ul className="navbar">
             {showMenuIcon && (
               <FaBars className="menu-icon" onClick={toggleMenu} />
@@ -123,7 +130,20 @@ function Home() {
           >
             <button class="prototype-btn">Test the prototype!</button>
           </a>
-          <img src={FirstWatchPrototype} alt="FirstWatchPrototype" />
+          <img
+            src={FirstWatchPrototype}
+            alt="FirstWatchPrototype"
+            onClick={() => openImage(FirstWatchPrototype)}
+          />
+          {enlargedImage && (
+            <div className="overlay" onClick={closeImage}>
+              <img
+                src={enlargedImage}
+                alt="Enlarged Image"
+                className="enlarged-image"
+              />
+            </div>
+          )}
         </div>
         <div className="FContainer">
           <h2>Description</h2>
@@ -181,16 +201,33 @@ function Home() {
           </div>
         </div>
         <div class="FContainer2">
-          {/* <p>
-          The image represents a flow of the prototype developed within Figma.
-          In this visualization, each screen or frame encapsulates a distinct
-          stage or interaction within the user journey. By arranging these
-          screens in a sequential manner, the flow illustrates the progression
-          of user interactions, transitions between different app states, and
-          the overall navigation structure.
-        </p> */}
+          <h2>Wireframes</h2>
           <div class="image-container">
-            <img src={FWFlow} alt="Flow" />
+            <img src={FWFlow} alt="Flow" onClick={() => openImage(FWFlow)} />
+            {enlargedImage && (
+              <div className="overlay" onClick={closeImage}>
+                <img
+                  src={enlargedImage}
+                  alt="Enlarged Image"
+                  className="enlarged-image"
+                />
+              </div>
+            )}
+          </div>
+        </div>
+        <div class="FContainer3">
+          <h2>App Identity</h2>
+          <div class="image-container">
+            <img src={FWIdentity} alt="Flow" onClick={() => openImage(FWIdentity)} />
+            {enlargedImage && (
+              <div className="overlay" onClick={closeImage}>
+                <img
+                  src={enlargedImage}
+                  alt="Enlarged Image"
+                  className="enlarged-image"
+                />
+              </div>
+            )}
           </div>
         </div>
       </header>

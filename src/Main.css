@@ -41,6 +41,7 @@
 .activestate .navbar {
   background-color: #e6cdcd;
   transition: ease-in 0.3s;
+  width: 85%;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.295);
 }
 
@@ -76,7 +77,7 @@ a:hover {
 .icon-container {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end; /* Align icons to the right */
+  justify-content: flex-end;
   align-items: center;
 }
 
@@ -158,7 +159,6 @@ a:hover {
 
 .projects-container {
   border-radius: 5px;
-  background-color: #fff4e6;
 }
 
 .projects-container > div {
@@ -262,18 +262,20 @@ a:hover {
   padding-right: 20px; 
 }
 
-.FContainer h2 {
+.FContainer h2, .FContainer2 h2, .FContainer3 h2 {
   color: #67302d;
   font-size: 1.5rem;
   text-transform: none;
-  margin-left: 20px;
+  margin-left: 50px;
   font-weight: 600;
 }
 
 .FContainer p {
   color: black;
   text-align: left;
+  margin-left: 30px;
   text-align: justify;
+  margin-right: 30px;
   margin-top: 20px;
 }
 
@@ -370,12 +372,55 @@ a:hover {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
-  text-decoration: none; /* Remove underline */
+  text-decoration: none;
   display: block;
-  /* Apply the pulse effect */
   animation: pulse 1s infinite alternate;
 }
 
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.877);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: ease-in 0.5s;
+}
+
+.enlarged-image {
+  max-width: 90%;
+  max-height: 90%;
+  transition: ease-in 0.5s;
+  object-fit: contain;
+}
+
+.enlarged-image:hover {
+  cursor: zoom-out;
+}
+
+.image-container:hover, .Hero-Container img:hover {
+  cursor: zoom-in;
+}
+
+.FContainer3 {
+  text-align: center;
+}
+
+.FContainer3 h2{
+  text-align: left;
+}
+
+.FContainer3 img {
+  width: 50%;
+  margin: 0 auto;
+}
+
+/* --------------------- ALL MEDIA QUERIES + KEYFRAMES ---------------------- */
 @keyframes pulse {
   0% {
     transform: scale(1);
@@ -387,8 +432,6 @@ a:hover {
   }
 }
 
-
-/* --------------------- ALL MEDIA QUERIES + KEYFRAMES ---------------------- */
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -422,10 +465,41 @@ a:hover {
   .project .overlay {
     font-size: 1rem;
   }
+
+  
 }
 
+@media (max-width: 1000px) {
+  .FContainer3 img {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+}
 /* Media Query for screens up to 600px width */
 @media (max-width: 800px) {
+
+  .FContainer3 img {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .FContainer h2, .FContainer2 h2, .FContainer3 h2 {
+    color: #67302d;
+    font-size: 1.5rem;
+    text-transform: none;
+    margin-left: 30px;
+    font-weight: 600;
+  }
+  
+  .FContainer p {
+    color: black;
+    text-align: left;
+    margin-left: 10px;
+    text-align: justify;
+    margin-right: 30px;
+    margin-top: 20px;
+  }
   .main-elements {
     display: none;
     margin-top: 100px;

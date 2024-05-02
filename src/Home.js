@@ -53,10 +53,9 @@ function Home() {
     e.preventDefault(); 
   
    
-    const projectsContainerPosition = projectsContainerRef.current.getBoundingClientRect();
+  const projectsContainerPosition = projectsContainerRef.current.getBoundingClientRect();
     
- 
-    const offset = 200;
+  const offset = 200;
     window.scrollTo({
       top: projectsContainerPosition.top - offset,
       behavior: "smooth",
