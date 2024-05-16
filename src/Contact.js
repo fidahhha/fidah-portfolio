@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import "./Main.css";
+import "./Project-Pages/Main.scss";
 import "typeface-inter";
 import { FaLinkedinIn, FaEnvelope, FaBars, FaGithub } from "react-icons/fa";
 

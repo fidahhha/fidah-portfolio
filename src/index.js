@@ -5,13 +5,13 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import Landing from "./Landing"; // Corrected import
 import Home from "./Home"; // Corrected import
-import About from "./About";
+import About from "./Project-Pages/About";
 import Contact from "./Contact";
-import FirstWatch from "./FirstWatch"
-import Kawena from "./Kawena"
-import ProjectManagement from "./React"
-import Parking from "./Parking"
-import CMS from "./CMS"
+import FirstWatch from "./Project-Pages/FirstWatch"
+import Kawena from "./Project-Pages/Kawena"
+import ProjectManagement from "./Project-Pages/React"
+import Parking from "./Project-Pages/Parking"
+import CMS from "./Project-Pages/CMS"
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(

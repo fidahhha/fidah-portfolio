@@ -1,0 +1,23 @@
+.laptop-container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: -80px;
+  }
+  
+  .laptop-frame {
+    width: 100%;
+    height: auto;
+  }
+  
+  .wireframe-container {
+    position: absolute;
+    top: 185px;
+    left: 50.3%;
+    transform: translateX(-50%);
+    overflow-y: auto;
+    max-height: 48.8%;
+    width: 90%;
+    max-width: 61.6%;
+  }

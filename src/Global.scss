@@ -1,0 +1,257 @@
+@import url("https://use.typekit.net/nvo3ftu.css");
+.App-header {
+  font-family: "interface", sans-serif;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.App-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.Container {
+  position: absolute;
+  top: 46%;
+  left: 50%;
+  min-width: 400px;
+  transform: translate(-50%, -50%);
+}
+
+h1 {
+  font-family: "interface", sans-serif;
+  font-size: 4.3rem;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+  color: white;
+}
+
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 3rem; /* Change font size to 4rem for screen width of 500px or smaller */
+  }
+}
+
+p {
+  font-family: "interface", sans-serif;
+  font-size: 1rem;
+  color: white;
+  margin-top: -50px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+  font-weight: 400;
+}
+
+button {
+  font-family: "interface", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: white;
+  margin-top: -5px;
+  padding: 12px;
+  text-decoration: none;
+  width: 210px;
+  border: 1px solid #b96d6d;
+  background-color: transparent;
+  border-radius: 50px;
+  transition: ease-out 0.5s;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #b96d6d;
+  transition: ease-in 0.5s;
+  text-decoration: none;
+}
+
+.BTN-Container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+}
+
+.icons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icons {
+  height: 35px;
+  width: 35px;
+  padding: 8px;
+  background-color: #ebd6d6;
+  margin-left: 10px;
+  border-radius: 5px;
+  color: #b96d6d;
+  transition: ease-out 0.5s;
+}
+
+.icons:hover {
+  color: #67302d;
+  transition: ease-in 0.5s;
+  cursor: pointer;
+}
+
+// ----------------- HOME PAGE --------------------------
+.Home,
+.Contact,
+.About {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "interface", sans-serif;
+}
+
+.Home-Container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 120vh;
+
+  h1 {
+    color: #67302d;
+    text-transform: none;
+    margin-top: -100px;
+    text-align: center;
+  }
+
+  h2 {
+    margin-top: -50px;
+    color: #b96d6d;
+    text-align: center;
+  }
+
+  p {
+    margin-top: 5px;
+    width: 70%;
+    color: rgb(44, 44, 44);
+    text-align: center;
+  }
+}
+
+.arrow {
+  color: #67302d;
+  cursor: pointer;
+}
+
+.Pcontainer {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200vh;
+  padding-bottom: 30px;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(calc((100% - 225px) / 3), 1fr)
+  );
+  grid-gap: 20px;
+  border-radius: 5px;
+
+  > div {
+    width: 90%;
+    max-width: 1100px;
+    height: auto;
+    aspect-ratio: 1;
+    border-radius: 5px;
+    background-color: #ffd8a8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.project {
+  position: relative;
+
+  :hover img {
+    filter: blur(5px);
+  }
+}
+
+.project .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(103, 48, 45, 0.856);
+  color: white;
+  font-size: 1.5rem;
+  font-family: "interface", sans-serif;
+  text-align: center;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  cursor: pointer;
+  padding: 5px;
+  transform: scale(1);
+  border-radius: 50px;
+  transition:
+    transform 0.3s ease-in,
+    background-color 0.3s ease-in;
+}
+
+.project:hover .overlay {
+  opacity: 2;
+  transform: scale(1.1);
+}
+
+// ------------ MEDIA QUERIES -----------------
+
+/* Media query for screens smaller than 767px */
+@media (max-width: 767px) {
+  .projects-container {
+    grid-template-columns: repeat(2, 300px);
+  }
+
+  .project .overlay {
+    font-size: 1.2rem;
+  }
+
+  .Fprojects-container {
+    grid-template-columns: 1fr;
+    margin: 20px;
+  }
+}
+
+/* Media query for screens smaller than 600px */
+@media (max-width: 600px) {
+  .projects-container {
+    grid-template-columns: repeat(1, 300px);
+  }
+
+  .project .overlay {
+    font-size: 1rem;
+  }
+}

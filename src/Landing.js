@@ -1,5 +1,5 @@
 import background from "./Images/Landing-BG.png";
-import "./Landing.css";
+import "./Global.scss";
 import "typeface-inter";
 import { Link } from "react-router-dom";
 import { FaLinkedinIn } from "react-icons/fa";
