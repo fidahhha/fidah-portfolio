@@ -4,6 +4,16 @@ $main-color: #b96d6d;
 $secondary-color: #67302d;
 $highlight: #ebd6d6;
 
+// Colors
+$Green: #BAB492;
+$yellow: #FFBD80;
+$peach: #FFB18B;
+$pink: #DB8B8A; 
+$lightpink: #E8C3BB;
+$rose: #E77F86;
+$darkGreen: #4D5A0B;
+$orange: #E98746;
+
 .navbar {
   position: fixed;
   top: 0;
@@ -20,26 +30,26 @@ $highlight: #ebd6d6;
 
   a {
     text-decoration: none;
-    color: $main-color;
+    color: $rose;
     transition: ease-out 0.5s;
   }
 }
 
 .active a {
-  color: $secondary-color;
+  color: $orange;
   font-weight: 600;
   text-decoration: none;
 }
 
 .activestate .navbar {
-  background-color: $highlight;
+  background-color: rgba(255, 255, 255, 0.795);
   transition: ease-in 0.3s;
   margin: 20px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.295);
 }
 
 a:hover {
-  color: $secondary-color;
+  color: $Green;
   transition: ease-in 0.3s;
   text-decoration: none;
 }
@@ -80,14 +90,14 @@ a:hover {
   height: 35px;
   width: 35px;
   padding: 8px;
-  background-color: $highlight;
+  background-color: $rose;
   margin-left: 10px;
   border-radius: 5px;
-  color: $main-color;
+  color: white;
   transition: ease-out 0.5s;
 
   &:hover {
-    color: #67302d;
+    color: $lightpink;
     transition: ease-in 0.5s;
     cursor: pointer;
   }

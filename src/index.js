@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import Landing from "./Landing"; // Corrected import
-import Home from "./Home"; // Corrected import
 import About from "./Project-Pages/About";
 import Contact from "./Contact";
 import FirstWatch from "./Project-Pages/FirstWatch"
@@ -18,7 +17,6 @@ ReactDOM.render(
   <Router>
     <Routes>
       <Route exact path="/" element={<Landing />} />
-      <Route path="/home" element={<Home />} />
       <Route path="/about" element={<About />}  />
       <Route path="/contact" element={<Contact />}  />
       <Route path="/firstwatch" element={<FirstWatch />}  />

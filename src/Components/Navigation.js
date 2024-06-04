@@ -67,8 +67,8 @@ function Navigation() {
           <li className={splitLocation[1] === "about" ? "active" : ""}>
             <Link to="/about">About Me</Link>
           </li>
-          <li className={splitLocation[1] === "home" ? "active" : ""}>
-            <Link to="/home">Projects</Link>
+          <li className={splitLocation[1] === "landing" ? "active" : ""}>
+            <Link to="/">Projects</Link>
           </li>
           <li className={splitLocation[1] === "contact" ? "active" : ""}>
             <Link to="/contact">Contact</Link>
@@ -76,7 +76,7 @@ function Navigation() {
         </div>
         <div className="home-page-element">
           <li>
-            <Link to="/home">Fidah Ali</Link>
+            <Link to="/">Fidah Ali</Link>
           </li>
         </div>
 
@@ -101,7 +101,7 @@ function Navigation() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaGithub className="icons" size={25} />
+              <FaGithub className="icon" size={25} />
             </a>
           </div>
         </div>

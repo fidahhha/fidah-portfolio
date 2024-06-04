@@ -1,3 +1,14 @@
+// Colors
+$Green: #BAB492;
+$yellow: #FFBD80;
+$peach: #FFB18B;
+$pink: #DB8B8A; 
+$lightpink: #E8C3BB;
+$rose: #E77F86;
+$darkGreen: #4D5A0B;
+$orange: #E98746;
+
+
 @import url("https://use.typekit.net/nvo3ftu.css");
 .App-header {
   font-family: "interface", sans-serif;
@@ -15,6 +26,7 @@
   object-fit: cover;
   object-position: center;
 }
+
 .Container {
   position: absolute;
   top: 46%;
@@ -50,28 +62,6 @@ p {
   font-weight: 400;
 }
 
-button {
-  font-family: "interface", sans-serif;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: white;
-  margin-top: -5px;
-  padding: 12px;
-  text-decoration: none;
-  width: 210px;
-  border: 1px solid #b96d6d;
-  background-color: transparent;
-  border-radius: 50px;
-  transition: ease-out 0.5s;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #b96d6d;
-  transition: ease-in 0.5s;
-  text-decoration: none;
-}
-
 .BTN-Container {
   display: flex;
   justify-content: center;
@@ -79,28 +69,6 @@ button:hover {
   height: 10vh;
 }
 
-.icons-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.icons {
-  height: 35px;
-  width: 35px;
-  padding: 8px;
-  background-color: #ebd6d6;
-  margin-left: 10px;
-  border-radius: 5px;
-  color: #b96d6d;
-  transition: ease-out 0.5s;
-}
-
-.icons:hover {
-  color: #67302d;
-  transition: ease-in 0.5s;
-  cursor: pointer;
-}
 
 // ----------------- HOME PAGE --------------------------
 .Home,
@@ -120,7 +88,7 @@ button:hover {
   height: 120vh;
 
   h1 {
-    color: #67302d;
+    color: $rose;
     text-transform: none;
     margin-top: -100px;
     text-align: center;
@@ -128,7 +96,7 @@ button:hover {
 
   h2 {
     margin-top: -50px;
-    color: #b96d6d;
+    color: $orange;
     text-align: center;
   }
 
@@ -141,90 +109,85 @@ button:hover {
 }
 
 .arrow {
-  color: #67302d;
+  color: $rose;
   cursor: pointer;
 }
 
-.Pcontainer {
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 200vh;
-  padding-bottom: 30px;
-}
-
-.projects-container {
-  display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(calc((100% - 225px) / 3), 1fr)
-  );
-  grid-gap: 20px;
-  border-radius: 5px;
-
-  > div {
-    width: 90%;
-    max-width: 1100px;
-    height: auto;
-    aspect-ratio: 1;
-    border-radius: 5px;
-    background-color: #ffd8a8;
+.Projects-Container {
+  .rectangle {
+    padding: 20px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    overflow: hidden;
+    height: 50%;
+    width: 70%;
+    margin: 0 auto;
+
+    .description {
+      height: 500px;
+      flex: 1;
+      background-color: #d6d6d6;
+      padding: 20px;
+
+      h1 {
+        text-align: left;
+        color: black;
+      }
+
+      h2 {
+        text-align: left;
+        color: #8a8989;
+        font-weight: 300;
+      }
+
+      p {
+        text-align: left;
+        color: black;
+        margin-left: -15px;
+        font-size: 15px;
+      }
+    }
+
+    img {
+      height: 500px;
+      width: auto;
+    }
+
+    .column-icon {
+      padding: 10px;
+      transition: transform 0.5s;
+      border-radius: 50%;
+      transition: ease-in 0.5s;
+      width: 50px;
+      height: 50px;
+    }
+
+    button {
+      font-family: "interface", sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      color: #000000;
+      padding: 12px;
+      text-decoration: none;
+      width: 130px;
+      border: 1px solid #000000;
+      background-color: transparent;
+      border-radius: 10px;
+      transition: ease-out 0.5s;
+      cursor: pointer;
+      height: auto;
+      text-decoration: underline;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: $rose;
+      border: 1px solid $rose;
+      transition: ease-in 0.5s;
+      text-decoration: none;
+      color: white;
+    }
   }
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
-
-* {
-  box-sizing: border-box;
-}
-
-.project {
-  position: relative;
-
-  :hover img {
-    filter: blur(5px);
-  }
-}
-
-.project .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(103, 48, 45, 0.856);
-  color: white;
-  font-size: 1.5rem;
-  font-family: "interface", sans-serif;
-  text-align: center;
-  font-weight: 600;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  cursor: pointer;
-  padding: 5px;
-  transform: scale(1);
-  border-radius: 50px;
-  transition:
-    transform 0.3s ease-in,
-    background-color 0.3s ease-in;
-}
-
-.project:hover .overlay {
-  opacity: 2;
-  transform: scale(1.1);
 }
 
 // ------------ MEDIA QUERIES -----------------
