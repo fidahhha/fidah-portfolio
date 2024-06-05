@@ -21,3 +21,48 @@
     width: 90%;
     max-width: 61.6%;
   }
+
+  @media screen and (max-width: 920px) {
+    .color-palette {
+      margin-left: 10px;
+      margin-bottom: 20px;
+    }
+  
+    .laptop-container {
+      max-width: 90%;
+    }
+  
+    .wireframe-container {
+      position: absolute;
+      top: 47.9%;
+      left: 50.4%;
+      transform: translate(-50%, -50%);
+      overflow-y: auto;
+      max-height: 47.7%;
+      width: 90%;
+      max-width: 61.6%;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .laptop-container {
+      max-width: 90%;
+      margin-top: -20px;
+    }
+  
+    .wireframe-container {
+      position: absolute;
+      top: 48%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      overflow-y: auto;
+      max-height: 47.7%;
+      width: 90%;
+      max-width: 61.5%;
+    }
+  
+    .color-palette {
+      margin-left: 0px;
+      margin-bottom: 10px;
+    }
+  }

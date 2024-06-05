@@ -50,63 +50,66 @@ function Home() {
           </div>
         </div>
 
-        <div className="projects-container">
-          <div className="project">
-            <h1>My Role</h1>
-            <p>UI Designer + Front-end developer</p>
-          </div>
-          <div className="project">
-            <h1>Tools</h1>
-            <div className="icon-wrapper">
-              <div className="icon-container">
-                <FaFigma className="icon" size={20} />
-                <span className="tag">Figma</span>
-              </div>
-              <div className="icon-container">
-                <FaSass className="icon" size={20} />
-                <span className="tag">SAAS</span>
-              </div>
-              <div className="icon-container">
-                <FaReact className="icon" size={20} />
-                <span className="tag">Next.js</span>
+        <div className="body">
+          <div className="projects-container">
+            <div className="project">
+              <h1>My Role</h1>
+              <p>UI Designer + Front-end developer</p>
+            </div>
+            <div className="project">
+              <h1>Tools</h1>
+              <div className="icon-wrapper">
+                <div className="icon-container">
+                  <FaFigma className="icon" size={20} />
+                  <span className="tag">Figma</span>
+                </div>
+                <div className="icon-container">
+                  <FaSass className="icon" size={20} />
+                  <span className="tag">SAAS</span>
+                </div>
+                <div className="icon-container">
+                  <FaReact className="icon" size={20} />
+                  <span className="tag">Next.js</span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div className="row">
-          <div className="column">
-            <div className="DetailsContainer">
-              <h2>Description</h2>
-              <p>
-                I have had the absolute honor of creating a website for a small
-                fashion/jewellery business Kawena Designs! Kawena designs is at
-                the heart of Oahu, Hawaii. It is much more than a brand it is a
-                celebration of unique designs, exquisite jewellery, and
-                captivating clothing. Bringing 70s inspired fashion and a
-                manifestation of artistry and cultural celebration.
-              </p>
-              <h2>Problem Statement</h2>
-              <p>
-                Despite its unique designs and cultural roots, Kawena Designs, a
-                small fashion and jewelry business in Oahu, Hawaii, struggles to
-                reach a broader audience due to limited online presence.
-                Reliance on social media for orders hampers expansion efforts,
-                hindering efficient order management and customer experience.
-                Without a dedicated digital platform, growth potential is
-                limited.
-              </p>
-              <h2>Solution</h2>
-              <p>
-                To address challenges, we'll create a visually appealing website
-                for Kawena Designs, showcasing unique fashion and facilitating
-                secure online purchases. This digital solution will expand
-                reach, attract diverse customers, and streamline order
-                processing, enhancing the brand's impact in fashion and jewelry.
-              </p>
-            </div>
+          <div className="DetailsContainer">
+            <h2>Description</h2>
+            <p>
+              I have had the absolute honor of creating a website for a small
+              fashion/jewellery business Kawena Designs! Kawena designs is at
+              the heart of Oahu, Hawaii. It is much more than a brand it is a
+              celebration of unique designs, exquisite jewellery, and
+              captivating clothing. Bringing 70s inspired fashion and a
+              manifestation of artistry and cultural celebration.
+            </p>
+            <h2>Problem Statement</h2>
+            <p>
+              Despite its unique designs and cultural roots, Kawena Designs, a
+              small fashion and jewelry business in Oahu, Hawaii, struggles to
+              reach a broader audience due to limited online presence. Reliance
+              on social media for orders hampers expansion efforts, hindering
+              efficient order management and customer experience. Without a
+              dedicated digital platform, growth potential is limited.
+            </p>
+            <h2>Solution</h2>
+            <p>
+              To address challenges, we'll create a visually appealing website
+              for Kawena Designs, showcasing unique fashion and facilitating
+              secure online purchases. This digital solution will expand reach,
+              attract diverse customers, and streamline order processing,
+              enhancing the brand's impact in fashion and jewelry.
+            </p>
           </div>
-          <div className="column">
+
+          <div className="Laptop-Container">
+            <h1>Find your most unique pieces here!</h1>
+            <p>
+              Polynesian 70s inspired handcrafted jewellery and fashion designed
+              by Kesaia (Owner) of Kawena Designs'
+            </p>
             <LaptopMockup />
           </div>
 
